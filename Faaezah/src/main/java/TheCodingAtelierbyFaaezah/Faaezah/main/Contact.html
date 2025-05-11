@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - The Coding Atelier</title>
+    <style>
+        /* Global box-sizing for consistent dimensions */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #fdeef4; /* Soft light pink */
+          color: #4d004d; /* Rich muted plum for text */
+        }
+
+        nav {
+          background-color: #e75480; /* Hot pink */
+          padding: 10px;
+          text-align: center;
+          position: sticky; /* Sticks to the top on scroll */
+          top: 0;
+          z-index: 1000;
+        }
+
+        nav a {
+          color: #ffffff; /* White text for nav links */
+          text-decoration: none;
+          margin: 0 15px;
+          font-size: 1.2em;
+          transition: color 0.3s; /* Hover effect */
+        }
+
+        nav a:hover {
+          color: #ffe6ed; /* Lighter pink hover effect */
+        }
+
+        header {
+          text-align: center;
+          padding: 50px 20px;
+        }
+
+        header h1 {
+          margin: 0;
+          font-size: 2.5em;
+          color: #e75480; /* Hot pink */
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+        }
+
+        .contact-form {
+          max-width: 600px;
+          margin: 30px auto;
+          background-color: #ffffff; /* White background for form */
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+          color: #c4005a; /* Rich dark pink */
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: 1.8em;
+        }
+
+        .contact-form label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+          color: #4d004d;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 2px solid #e75480; /* Hot pink border */
+          border-radius: 5px;
+          font-size: 1em;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+          outline: none;
+          border-color: #c4005a; /* Darker pink when focused */
+        }
+
+        .contact-form button {
+          background-color: #e75480; /* Hot pink button */
+          color: #ffffff;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 1.2em;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+          background-color: #c4005a; /* Darker pink on hover */
+        }
+
+        footer {
+          background-color: #e75480;
+          text-align: center;
+          color: #ffffff;
+          padding: 15px 0;
+          width: 100%;
+        }
+
+        footer p {
+          margin: 0;
+          font-size: 1em;
+        }
+
+        footer a {
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: bold;
+        }
+
+        footer a:hover {
+          color: #ffe6ed; /* Lighter pink hover effect */
+        }
+
+        .footer-icon img {
+          width: 25px;
+          height: 25px;
+          margin-left: 10px;
+          vertical-align: middle;
+        }
+    </style>
+    (function() {
+    const _0x5f2d = [
+    'preventDefault', 'reload', 'keydown', 'ctrlKey', 'shiftKey', 'key',
+    'addEventListener', 'clear', 'devtools', 'isOpen', 'orientation',
+    'function', 'toString', 'constructor'
+    ].map(x => atob(btoa(x)));
+
+    // Anti-debugging techniques
+    function antiDebug() {
+    const start = performance.now();
+    debugger;
+    const end = performance.now();
+    if (end - start > 100) window.location.reload();
+    }
+    setInterval(antiDebug, 1);
+
+    // Detect DevTools through console.log timing
+    let div = document.createElement('div');
+    let loop = setInterval(() => {
+    const start = performance.now();
+    console.log(div);
+    console.clear();
+    const end = performance.now();
+    if (end - start > 100) window.location.reload();
+    }, 1000);
+
+    // Advanced DevTools detection
+    let devtools = {
+    isOpen: false,
+    orientation: undefined
+    };
+
+    // Detect through window size
+    const threshold = 160;
+    const emitOnDevToolsState = (isOpen) => {
+    window.location.reload();
+    };
+
+    setInterval(() => {
+    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    const orientation = widthThreshold ? 'vertical' : heightThreshold ? 'horizontal' : undefined;
+
+    if (!(heightThreshold && widthThreshold) &&
+    ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) ||
+    widthThreshold || heightThreshold)) {
+    if (!devtools.isOpen || devtools.orientation !== orientation) {
+    emitOnDevToolsState(true);
+    }
+    devtools.isOpen = true;
+    devtools.orientation = orientation;
+    } else {
+    if (devtools.isOpen) {
+    emitOnDevToolsState(false);
+    }
+    devtools.isOpen = false;
+    devtools.orientation = undefined;
+    }
+    }, 500);
+
+    // Aggressive key combination blocking
+    const blockedKeys = new Set(['u', 'i', 'j', 'c', 's', 'F12', 'Enter', 'Tab']);
+    document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && blockedKeys.has(e.key.toLowerCase())) {
+    e.stopPropagation();
+    e.preventDefault();
+    window.location.reload();
+    }
+    }, true);
+
+    // Disable right-click and context menu
+    document.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    window.location.reload();
+    });
+
+    // Disable selection
+    document.addEventListener('selectstart', e => e.preventDefault());
+
+    // Console cleaner and poisoner
+    setInterval(() => {
+    console.clear();
+    console.log('%cWarning!', 'font-size:50px;color:red;-webkit-text-stroke:1px black;');
+    console.log('%cThis is a protected website.', 'font-size:20px;color:black;');
+    }, 50);
+
+    // Source code obfuscation through error stack manipulation
+    Error.stackTraceLimit = 0;
+    Object.defineProperty(window, 'console', {
+    get: function() {
+    window.location.reload();
+    return {};
+    }
+    });
+
+    // Function name obfuscation
+    (function() {
+    return function() {
+    return function() {
+    return function() {
+    window.location.reload();
+    }();
+    }();
+    }();
+    })();
+
+    // Break debugging through infinite recursion on debug
+    function infiniteDebug() {
+    setInterval(() => {
+    debugger;
+    infiniteDebug();
+    }, 0);
+    }
+    infiniteDebug();
+
+    // Source mapping interference
+    const sourceMapBreaker = new Error().stack;
+    console.log(sourceMapBreaker);
+
+    // Mess with common developer tool functions
+    ['debug', 'info', 'log', 'warn', 'error'].forEach(function(method) {
+    console[method] = function() {
+    window.location.reload();
+    };
+    });
+
+    // Add random reload triggers
+    setInterval(() => {
+    if (window.outerHeight - window.innerHeight > 200 ||
+    window.outerWidth - window.innerWidth > 200) {
+    window.location.reload();
+    }
+    }, 1000);
+
+    })();
+
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="AboutMe.html">About Faaezah</a>
+    <a href="Contact.html">Contact</a>
+</nav>
+<header>
+    <h1>Contact</h1>
+</header>
+
+<div class="contact-form">
+    <h2>We'd Love to Hear From You!</h2>
+    <form action="https://formspree.io/f/movejgng" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
+    <div class="footer-icon">
+        <a href="https://www.youtube.com/@TheCodingAtelierbyFaaezah" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+            Follow on YouTube
+        </a>
+    </div>
+</footer>
+</body>
+</html>
