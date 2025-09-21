@@ -6,306 +6,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Faaezah - The Coding Atelier</title>
   <style>
-    /* Global box-sizing for consistent dimensions */
-    * {
-      box-sizing: border-box;
-    }
+     {
+   box-sizing: border-box;
+ }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fdeef4; /* Soft light pink */
-      color: #4d004d; /* Rich muted plum for text */
-    }
+ body {
+   margin: 0;
+   font-family: Arial, sans-serif;
+   background-color: #fdeef4;
+   color: #B76E79;
+   font-size: 18px;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+ }
 
-    nav {
-      background-color: #e75480; /* Hot pink */
-      padding: 10px;
-      text-align: center;
-      position: sticky; /* Sticks to the top on scroll */
-      top: 0;
-      z-index: 1000;
-    }
 
-    nav a {
-      color: #ffffff; /* White text for nav links */
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.2em;
-      transition: color 0.3s; /* Hover effect */
-    }
+ header {
+   background-color: #e75480;
+   padding: 25px;
+   text-align: center;
+ }
 
-    nav a:hover {
-      color: #ffe6ed; /* Lighter pink hover effect */
-    }
+ header h1 {
+   margin: 0;
+   font-size: 2.5em;
+   color: #ffffff;
+ }
 
-    header {
-      text-align: center;
-      padding: 50px 20px;
-    }
+ nav {
+   background-color: #e75480;
+   padding: 10px;
+   text-align: center;
+ }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #e75480; /* Hot pink */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
-    }
+ nav a {
+   color: #ffffff;
+   text-decoration: none;
+   margin: 0 15px;
+   font-size: 1.2em;
+ }
 
-    .image-box {
-      max-width: 300px;
-      margin: 20px auto;
-      text-align: center;
-    }
+ nav a:hover {
+   color: #ffe6ed;
+ }
 
-    .image-box img {
-      width: 100%;
-      height: auto;
-      border-radius: 50%; /* Circle image effect */
-      border: 4px solid #e75480; /* Hot pink border */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    }
+main {
+  display: flex;
+  flex: 1;
+  padding: 40px;
+  gap: 40px;
+  align-items: flex-start;
+}
 
-    .box {
-      background-color: #ffedf4; /* Soft light pink for boxes */
-      border: 2px solid #e75480; /* Hot pink border */
-      border-radius: 10px;
-      padding: 15px 20px; /* Balanced padding */
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin: 20px auto;
-      max-width: 500px; /* Responsive width */
-      line-height: 1.5;
-      transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
-    }
+.box-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
 
-    .box:hover {
-      transform: scale(1.02); /* Slight enlargement on hover */
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-    }
+.highlight-box {
+  flex: 1 1 calc(50% - 40px);
+  background-color: #fff0f5;
+  border: 2px dashed #e75480;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(183, 110, 121, 0.2);
+  font-family: 'Quicksand', Arial, sans-serif;
+  color: #B76E79;
+  text-align: center;
+}
 
-    .box h2 {
-      color: #c4005a; /* Rich dark pink */
-      font-size: 1.4em; /* Heading size */
-      margin-bottom: 10px;
-    }
 
-    .box p {
-      color: #4d004d; /* Plum text color */
-      font-size: 1.2em;
-    }
+.highlight-box h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #e75480;
+}
 
-    footer {
-      background-color: #e75480;
-      text-align: center;
-      color: #ffffff;
-      padding: 15px 0;
-      width: 100%;
-    }
+.highlight-box p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
 
-    footer p {
-      margin: 0;
-      font-size: 1em;
-    }
+ footer {
+   background-color: #e75480;
+   text-align: center;
+   color: #ffffff;
+   padding: 15px 0;
+ }
 
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+ footer a {
+   color: #ffffff;
+   text-decoration: none;
+   font-weight: bold;
+ }
 
-    footer a:hover {
-      color: #ffe6ed; /* Lighter pink hover effect */
-    }
+ footer a:hover {
+   color: #ffe6ed;
+ }
 
-    .footer-icon img {
-      width: 25px;
-      height: 25px;
-      margin-left: 10px;
-      vertical-align: middle;
-    }
+ .footer-icon img {
+   width: 25px;
+   height: 25px;
+   margin-left: 10px;
+   vertical-align: middle;
+ }
   </style>
-  (function() {
-  const _0x5f2d = [
-  'preventDefault', 'reload', 'keydown', 'ctrlKey', 'shiftKey', 'key',
-  'addEventListener', 'clear', 'devtools', 'isOpen', 'orientation',
-  'function', 'toString', 'constructor'
-  ].map(x => atob(btoa(x)));
-
-  // Anti-debugging techniques
-  function antiDebug() {
-  const start = performance.now();
-  debugger;
-  const end = performance.now();
-  if (end - start > 100) window.location.reload();
-  }
-  setInterval(antiDebug, 1);
-
-  // Detect DevTools through console.log timing
-  let div = document.createElement('div');
-  let loop = setInterval(() => {
-  const start = performance.now();
-  console.log(div);
-  console.clear();
-  const end = performance.now();
-  if (end - start > 100) window.location.reload();
-  }, 1000);
-
-  // Advanced DevTools detection
-  let devtools = {
-  isOpen: false,
-  orientation: undefined
-  };
-
-  // Detect through window size
-  const threshold = 160;
-  const emitOnDevToolsState = (isOpen) => {
-  window.location.reload();
-  };
-
-  setInterval(() => {
-  const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-  const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-  const orientation = widthThreshold ? 'vertical' : heightThreshold ? 'horizontal' : undefined;
-
-  if (!(heightThreshold && widthThreshold) &&
-  ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) ||
-  widthThreshold || heightThreshold)) {
-  if (!devtools.isOpen || devtools.orientation !== orientation) {
-  emitOnDevToolsState(true);
-  }
-  devtools.isOpen = true;
-  devtools.orientation = orientation;
-  } else {
-  if (devtools.isOpen) {
-  emitOnDevToolsState(false);
-  }
-  devtools.isOpen = false;
-  devtools.orientation = undefined;
-  }
-  }, 500);
-
-  // Aggressive key combination blocking
-  const blockedKeys = new Set(['u', 'i', 'j', 'c', 's', 'F12', 'Enter', 'Tab']);
-  document.addEventListener('keydown', function(e) {
-  if ((e.ctrlKey || e.metaKey) && blockedKeys.has(e.key.toLowerCase())) {
-  e.stopPropagation();
-  e.preventDefault();
-  window.location.reload();
-  }
-  }, true);
-
-  // Disable right-click and context menu
-  document.addEventListener('contextmenu', e => {
-  e.preventDefault();
-  window.location.reload();
-  });
-
-  // Disable selection
-  document.addEventListener('selectstart', e => e.preventDefault());
-
-  // Console cleaner and poisoner
-  setInterval(() => {
-  console.clear();
-  console.log('%cWarning!', 'font-size:50px;color:red;-webkit-text-stroke:1px black;');
-  console.log('%cThis is a protected website.', 'font-size:20px;color:black;');
-  }, 50);
-
-  // Source code obfuscation through error stack manipulation
-  Error.stackTraceLimit = 0;
-  Object.defineProperty(window, 'console', {
-  get: function() {
-  window.location.reload();
-  return {};
-  }
-  });
-
-  // Function name obfuscation
-  (function() {
-  return function() {
-  return function() {
-  return function() {
-  window.location.reload();
-  }();
-  }();
-  }();
-  })();
-
-  // Break debugging through infinite recursion on debug
-  function infiniteDebug() {
-  setInterval(() => {
-  debugger;
-  infiniteDebug();
-  }, 0);
-  }
-  infiniteDebug();
-
-  // Source mapping interference
-  const sourceMapBreaker = new Error().stack;
-  console.log(sourceMapBreaker);
-
-  // Mess with common developer tool functions
-  ['debug', 'info', 'log', 'warn', 'error'].forEach(function(method) {
-  console[method] = function() {
-  window.location.reload();
-  };
-  });
-
-  // Add random reload triggers
-  setInterval(() => {
-  if (window.outerHeight - window.innerHeight > 200 ||
-  window.outerWidth - window.innerWidth > 200) {
-  window.location.reload();
-  }
-  }, 1000);
-
-  })();
 
 </head>
+
+<header>
+  <h1>Our Story</h1>
+</header>
 <body>
 <nav>
   <a href="index.html">Home</a>
-  <a href="AboutMe.html">About Faaezah</a>
+  <a href="AboutMe.html">About</a>
+  <a href="Faaezah.html">About The Founder</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="partnerships.html">Partnerships</a>
+  <a href="donate.html">Donate</a>
   <a href="Contact.html">Contact</a>
+
 </nav>
 
-<header>
-  <h1>About Faaezah</h1>
-</header>
-
-<div class="image-box">
-  <img src="Faaezah.png" alt="A photo of Faaezah">
-</div>
-
-<div class="box">
-  <h2>A Journey of Passion and Creativity</h2>
+<div class="box-grid">
+<div class="highlight-box">
+  <h2>Inspired by Her Grandparents</h2>
   <p>
-    Faaezah is a passionate creator who envisioned a world where coding is accessible and fun for everyone.
-    From her early days experimenting with lines of code to founding "The Coding Atelier," she has been on
-    a mission to break barriers and inspire individuals to transform ideas into reality through technology.
+    Faaezah’s summers in India were more than family visits — they were lessons in quiet leadership and compassion. Her grandfather, a retired professor, modeled the power of shared knowledge. Her grandmother, with gentle wisdom, showed how education could be an act of love. These moments shaped Faaezah’s belief that learning should be accessible to all. The Coding Atelier is her tribute to their legacy — a way to extend opportunity to children who’ve been left out of the digital world.
   </p>
 </div>
-
-<div class="box">
-  <h2>Faaezah's roles in clubs and activities</h2>
+<div class="highlight-box">
+  <h2>Why Digital Literacy Matters</h2>
   <p>
-    Faaezah is part of the prestigious FTC team, ITKAN Ravenbots, which have been received highly-regarded awayrds,
-    such as the Semi-Finalist award and the Connect Award. She is a programmer that helped with the autonomous code of
-    the robot, and she currently is the marketing head of the team. During the summer, she helps raise money for the team
-    (whilst also getting paid herself) teaching Java to future students at the institution. During compeitions, she is
-    the team representative, handling alliance discussions and interviewing other major teams. Her teammates appraise her
-    for her confident and team ethic.
-
-    Alongside, her heavy involvement in the FTC tem
+    Faaezah has seen firsthand how technology can widen the gap between privilege and possibility. For many children, especially in underserved communities, computers remain out of reach — not because they lack talent, but because they lack access. Through refurbished laptops, custom CodeKits, and hands-on workshops, she’s working to change that. Her goal is simple: make digital literacy feel possible, joyful, and empowering.
   </p>
 </div>
-
-<div class="box">
-  <h2>Join the Journey</h2>
+<div class="highlight-box">
+  <h2>What makes her CodeKits different</h2>
   <p>
-    Become a part of this incredible journey by exploring "The Coding Atelier" and supporting the mission
-    to make coding a universal language. Together, we can inspire creativity, innovation, and positive change.
+    The CodeKits Faaezah designs are more than learning tools — they’re invitations to explore. Built for children with little or no exposure to technology, each kit is layered with offline and online activities, unplugged challenges, and beginner-friendly software. Whether a child is six or sixteen, the kits are crafted to spark curiosity and build confidence before they ever touch a computer.
   </p>
 </div>
+<div class="highlight-box">
+  <h2>Where she Works</h2>
+  <p>
+    The Coding Atelier lives in two places close to Faaezah’s heart: India, where her family roots run deep, and Austin, Texas, where she’s grown up. From orphanages and universities to local libraries and elementary schools, she’s building partnerships that meet children where they are — with tools that help them grow.
+  </p>
+</div>
+</div>
+
 
 <footer>
   <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
