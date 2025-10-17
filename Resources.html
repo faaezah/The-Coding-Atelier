@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline Coding Kits</title>
+  <style>
+    {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdeef4;
+  color: #B76E79;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+header {
+  background-color: #e75480;
+  padding: 25px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #ffffff;
+}
+
+nav {
+  background-color: #e75480;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+
+nav a:hover {
+  color: #ffe6ed;
+}
+
+main {
+ display: flex;
+ flex: 1;
+ padding: 40px;
+ gap: 40px;
+ align-items: flex-start;
+}
+
+.highlight-box {
+background-color: #fff0f5;
+border-radius: 15px;
+padding: 25px;
+box-shadow: 0 4px 8px rgba(183, 110, 121, 0.2);
+font-family: 'Quicksand', Arial, sans-serif;
+color: #B76E79;
+text-align: center;
+}
+
+
+.highlight-box h2 {
+font-size: 1.8em;
+color: #e75480;
+}
+
+.highlight-box p {
+font-size: 1.1em;
+line-height: 1.8;
+margin-top: 15px;
+margin-bottom: 0;
+text-align: left;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+}
+.box-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+.main-box {
+  background-color: #fff0f5;
+  border: 2px dashed #e75480;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(183, 110, 121, 0.2);
+  font-family: 'Quicksand', Arial, sans-serif;
+  color: #B76E79;
+  text-align: center;
+}
+
+
+.main-box h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #e75480;
+}
+
+.main-box p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #e75480;
+  text-align: center;
+  color: #ffffff;
+  padding: 15px 0;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #ffe6ed;
+}
+
+.footer-icon img {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Offline Coding Kit</h1>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About</a>
+  <a href="Faaezah.html">About The Founder</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="partnerships.html">Partnerships</a>
+  <a href="donate.html">Donate</a>
+  <a href="resources.html">Offline Coding Kit</a>
+  <a href="Contact.html">Contact</a>
+</nav>
+
+<button id="scrollDown" onclick="scrollDown()" title="Scroll Down"
+        style="position:fixed;bottom:20px;right:20px;background-color:pink;border:none;border-radius:50%;width:50px;height:50px;box-shadow:0 4px 8px rgba(0,0,0,0.2);font-size:24px;cursor:pointer;z-index:999;">⬇</button>
+
+
+<button id="scrollUp" onclick="scrollUp()" title="Scroll Up"
+        style="position:fixed;bottom:20px;left:20px;background-color:plum;border:none;border-radius:50%;width:50px;height:50px;box-shadow:0 4px 8px rgba(0,0,0,0.2);font-size:24px;cursor:pointer;z-index:999;">⬆</button>
+
+<div class="highlight-box">
+  <h1>Welcome to The Coding Atelier Code Kit</h1>
+  <p>This interactive kit is designed for curious young creators ready to explore the world of coding. Scroll down to play, build, and remix — no experience needed!</p>
+
+</div>
+
+<div class="main-box">
+  <h2>Draw with Blockly Turtle</h2>
+  <p>Use block coding to move a turtle and draw cool shapes! Great for learning loops and angles.</p>
+  <iframe src="https://blockly.games/turtle?lang=en" width="100%" height="500px"></iframe>
+  <p><strong>✨ Try this:</strong> Make the turtle draw a square, triangle, and circle!</p>
+</div>
+
+<div class="main-box">
+  <h2>Play Rodocodo</h2>
+  <p>This game teaches coding through fun levels and instant feedback. Just click and play — no signup needed!</p>
+  <iframe src="https://www.rodocodo.com/free-coding-game-for-kids/" width="100%" height="500px"></iframe>
+  <p><strong>✨ Try this:</strong> Complete 3 levels and earn your certificate!</p>
+</div>
+
+<div class="main-box">
+  <h2>Blockly Maze Challenge</h2>
+  <p>Help the character reach the goal by arranging blocks in the right order. It’s like solving a puzzle with code!</p>
+  <iframe src="https://blockly.games/maze?lang=en" width="100%" height="500px"></iframe>
+  <p><strong>✨ Try this:</strong> Can you solve the maze in fewer blocks?</p>
+</div>
+<div class="main-box">
+  <h2>Guide the Bird with Blockly</h2>
+  <p>Use block coding to help the bird reach its worm! Learn sequencing and logic in a fun way.</p>
+  <iframe src="https://blockly.games/bird?lang=en" width="100%" height="500px"></iframe>
+  <p><strong>✨ Try this:</strong> Complete all 10 levels without crashing into a tree!</p>
+</div>
+
+<div class="main-box">
+  <h2>More Projects Coming Soon!</h2>
+  <p>We’re working on new games, challenges, and creative tools just for you. Stay tuned!</p>
+</div>
+<footer>
+  <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
+  <div class="footer-icon">
+    <a href="https://www.youtube.com/@TheCodingAtelierbyFaaezah" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+      Follow on YouTube
+    </a>
+  </div>
+</footer>
+<script>
+  function scrollDown() {
+    window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+  }
+
+  function scrollUp() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>
