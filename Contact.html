@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,133 +10,142 @@
 
 
         body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   font-family: 'Poppins', sans-serif;
+ }
+
+
+ .page-wrapper {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   background-color: #fdeef4;
+ }
+
+
+  header {
+    background-color: #e75480;
+    padding: 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ffffff;
+  }
+
+  nav {
+    background-color: #e75480;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+  }
+
+  nav a:hover {
+    color: #ffe6ed;
+  }
+
+ main {
+   display: flex;
+   flex: 1;
+   padding: 40px;
+   gap: 40px;
+   align-items: flex-start;
+ }
+
+  .contact-form {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.page-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: #fdeef4;
-}
 
+         .contact-form h2 {
+           color: #c4005a;
+           text-align: center;
+           margin-bottom: 20px;
+           font-size: 1.1em;
+         }
 
- header {
-   background-color: #e75480;
-   padding: 30px;
-   text-align: center;
- }
-
- header h1 {
-   margin: 0;
-   font-size: 2.5em;
-   color: #ffffff;
- }
-
- nav {
-   background-color: #e75480;
-   padding: 10px;
-   text-align: center;
- }
-
- nav a {
-   color: #ffffff;
-   text-decoration: none;
-   margin: 0 15px;
-   font-size: 1.2em;
- }
-
- nav a:hover {
-   color: #ffe6ed;
- }
-
-main {
-  display: flex;
-  flex: 1;
-  padding: 40px;
-  gap: 40px;
-  align-items: flex-start;
-}
-
- .contact-form {
-          max-width: 800px;
-          margin: 40px auto;
-          background-color: #ffffff;
-          padding: 30px;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form h2 {
-          color: #c4005a;
-          text-align: center;
-          margin-bottom: 20px;
-          font-size: 1.1em;
-        }
-
-        .contact-form label {
-          display: block;
-          font-weight: bold;
-          margin-bottom: 5px;
-          color: #4d004d;
-        }
+         .contact-form label {
+           display: block;
+           font-weight: bold;
+           margin-bottom: 5px;
+           color: #4d004d;
+         }
 
         .contact-form input,
-        .contact-form textarea {
-          width: 100%;
-          padding: 15px;
-          margin-bottom: 15px;
-          border: 2px solid #e75480;
-          border-radius: 5px;
-          font-size: 1.1em;
-        }
+.contact-form textarea {
+  width: 95%;                    /* Slightly narrower */
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #e75480;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
 
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-          outline: none;
-          border-color: #c4005a;
-        }
 
-        .contact-form button {
-          background-color: #e75480;
-          color: #ffffff;
-          border: none;
-          border-radius: 5px;
-          padding: 15px 30px;
-          font-size: 1.3em;
-          cursor: pointer;
-          transition: background-color 0.3s;
-        }
+         .contact-form input:focus,
+         .contact-form textarea:focus {
+           outline: none;
+           border-color: #c4005a;
+         }
 
-        .contact-form button:hover {
-          background-color: #c4005a;
-        }
-
- footer {
+         .contact-form button {
    background-color: #e75480;
-   text-align: center;
    color: #ffffff;
-   padding: 15px 0;
+   border: none;
+   border-radius: 5px;
+   padding: 10px 20px;
+   font-size: 1em;
+   max-width: 200px;
+   width: 100%;
+   display: block;
+   margin: 0 auto;
+   cursor: pointer;
+   transition: background-color 0.3s;
  }
 
- footer a {
-   color: #ffffff;
-   text-decoration: none;
-   font-weight: bold;
- }
 
- footer a:hover {
-   color: #ffe6ed;
- }
+         .contact-form button:hover {
+           background-color: #c4005a;
+         }
 
- .footer-icon img {
-   width: 25px;
-   height: 25px;
-   margin-left: 10px;
-   vertical-align: middle;
- }
+  footer {
+    background-color: #e75480;
+    text-align: center;
+    color: #ffffff;
+    padding: 15px 0;
+  }
+
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    color: #ffe6ed;
+  }
+
+  .footer-icon img {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
 
     </style>
 
@@ -153,6 +163,7 @@ main {
     <a href="gallery.html">Gallery</a>
     <a href="partnerships.html">Partnerships</a>
     <a href="donate.html">Donate</a>
+    <a href="resources.html">Offline Coding Kit</a>
     <a href="Contact.html">Contact</a>
 
 </nav>
