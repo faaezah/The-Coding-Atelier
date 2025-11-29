@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdeef4;
+      color: #B76E79;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, nav, footer {
+      background-color: #e75480;
+      text-align: center;
+      color: #fff;
+    }
+    header { padding: 30px; }
+    nav { padding: 10px; }
+    nav a { color: #fff; text-decoration: none; margin: 0 15px; font-size: 1.2em; }
+    nav a:hover { color: #ffe6ed; }
+    main { flex: 1; display: flex; justify-content: center; align-items: center; }
+    form { display: flex; flex-direction: column; gap: 15px; width: 300px; }
+    input, button { padding: 10px; font-size: 1em; border-radius: 5px; border: 2px solid #e75480; }
+    button { background-color: #e75480; color: #fff; cursor: pointer; }
+    button:hover { background-color: #B76E79; }
+  </style>
+</head>
+<body>
+<header><h1>The Coding Atelier</h1></header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="AboutMe.html">About</a>
+  <a href="Faaezah.html">About The Founder</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="partnerships.html">Partnerships</a>
+  <a href="donate.html">Donate</a>
+  <a href="pin.html">Online Codekit</a>
+  <a href="resources.html">Resources</a>
+  <a href="Contact.html">Contact</a>
+</nav>
+<main>
+
+  <form id="signupForm">
+    <h2>Sign Up with Email</h2>
+    <input type="email" id="email" placeholder="Enter email" required>
+    <button type="submit">Sign Up</button>
+  </form>
+</main>
+<footer><p>&copy; 2025 The Coding Atelier</p></footer>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, sendEmailVerification }
+    from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+  import { getFirestore, doc, setDoc }
+    from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD8DKUfh4S5ObzZRcIWE-KMly_ORlGJgqg",
+    authDomain: "the-coding-atelier.firebaseapp.com",
+    projectId: "the-coding-atelier",
+    storageBucket: "the-coding-atelier.firebasestorage.app",
+    messagingSenderId: "469308886574",
+    appId: "1:469308886574:web:cbd5e6ab95c4cc6d6299bf",
+    measurementId: "G-51TMG27X0H"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  document.getElementById("signupForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = "defaultPass123"; // shared password for now
+
+    try {
+      // Create the user
+      const userCred = await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User created:", userCred.user);
+
+      // Send verification email
+      await sendEmailVerification(userCred.user);
+      console.log("Verification email sent to:", userCred.user.email);
+
+      // Initialize progress in Firestore
+      await setDoc(doc(db, "progress", userCred.user.uid), {
+        step: 0,
+        email: userCred.user.email
+      });
+      console.log("Progress initialized for:", userCred.user.uid);
+
+      alert("Verification email sent! Check your inbox.");
+      window.location.href = "codekit.html";
+    } catch (err) {
+      console.error("Signup error:", err);
+      alert("Error: " + err.message);
+    }
+  });
+</script>
+</body>
+</html>
