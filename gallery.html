@@ -1,213 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
+    <title>Gallery - The Coding Atelier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Faaezah - The Coding Atelier</title>
+
     <style>
-         {
-       box-sizing: border-box;
-     }
+        * { box-sizing: border-box; }
 
-     body {
-       margin: 0;
-       font-family: Arial, sans-serif;
-       background-color: #fdeef4;
-       color: #B76E79;
-       font-size: 18px;
-       display: flex;
-       flex-direction: column;
-       min-height: 100vh;
-     }
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background-color: #FDECF4;
+            color: #B76E79;
+            overflow-x: hidden;
+        }
 
+        header {
+            background-color: #e75480;
+            padding: 25px;
+            text-align: center;
+        }
 
-     header {
-       background-color: #e75480;
-       padding: 25px;
-       text-align: center;
-     }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #ffffff;
+        }
 
-     header h1 {
-       margin: 0;
-       font-size: 2.5em;
-       color: #ffffff;
-     }
+        nav {
+            background-color: #e75480;
+            padding: 10px;
+            text-align: center;
+        }
 
-     nav {
-       background-color: #e75480;
-       padding: 10px;
-       text-align: center;
-     }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
 
-     nav a {
-       color: #ffffff;
-       text-decoration: none;
-       margin: 0 15px;
-       font-size: 1.2em;
-     }
+        nav a:hover {
+            color: #ffe6ed;
+        }
 
-     nav a:hover {
-       color: #ffe6ed;
-     }
+        main {
+            padding: 40px 20px 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-    main {
-      display: flex;
-      flex: 1;
-      padding: 40px;
-      gap: 40px;
-      align-items: flex-start;
-    }
+        .gallery-title {
+            text-align: center;
+            font-size: 2.4rem;
+            color: #e75480;
+            margin-bottom: 10px;
+        }
 
-    .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        .gallery-subtitle {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            font-size: 1.1rem;
+            color: #B76E79;
+        }
 
-.gallery-item {
-  background-color: #fff0f5;
-  border: 2px dashed #e75480;
-  border-radius: 15px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(183, 110, 121, 0.2);
-  font-family: 'Quicksand', Arial, sans-serif;
-}
+        /* GALLERY GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
 
-.gallery-image {
-  font-size: 3em;
-  margin-bottom: 15px;
-}
+        .gallery-grid.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.gallery-text {
-  font-size: 1.1em;
-  color: #B76E79;
-}
-.gallery-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 4px 14px rgba(183,110,121,0.25);
+            opacity: 0;
+            transform: translateY(25px);
+            animation: fadeUp 1s ease forwards;
+        }
 
-     footer {
-       background-color: #e75480;
-       text-align: center;
-       color: #ffffff;
-       padding: 15px 0;
-     }
+        .gallery-item:nth-child(1) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.35s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.65s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.8s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.95s; }
 
-     footer a {
-       color: #ffffff;
-       text-decoration: none;
-       font-weight: bold;
-     }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-     footer a:hover {
-       color: #ffe6ed;
-     }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
 
-     .footer-icon img {
-       width: 25px;
-       height: 25px;
-       margin-left: 10px;
-       vertical-align: middle;
-     }
+        .gallery-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 16px;
+            background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: #e75480;
+            text-align: center;
+            color: #ffffff;
+            padding: 15px 0;
+        }
+
+        /* WELCOME OVERLAY */
+        .welcome-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(to bottom, #FDECF4, #F7C9D4, #FDECF4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            color: #e75480;
+            text-align: center;
+            cursor: none;
+            overflow: hidden;
+        }
+
+        .welcome-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .welcome-hint {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* STAR CURSOR */
+        .cursor-star {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>') no-repeat center;
+            background-size: contain;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,0.9));
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        /* FLOATING + TWINKLING STARS */
+        .star {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: drift 12s linear infinite, twinkle 2.5s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            from { transform: translateY(0); }
+            to { transform: translateY(-120vh); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
     </style>
-
 </head>
-
 <body>
+
 <header>
-    <h1>Gallery</h1>
+    <h1>The Coding Atelier</h1>
 </header>
+
 <nav>
     <a href="index.html">Home</a>
     <a href="AboutMe.html">About</a>
-    <a href="Faaezah.html">About The Founder</a>
+    <a href="Faaezah.html">Founder</a>
     <a href="gallery.html">Gallery</a>
-    <a href="partnerships.html">Partnerships</a>
     <a href="donate.html">Donate</a>
     <a href="pin.html">Online Codekit</a>
     <a href="resources.html">Resources</a>
-    <a href="reviews.html">Testimonials</a>
+    <a href="metrics.html">Impact</a>
     <a href="Contact.html">Contact</a>
 </nav>
 
-<div class="gallery-grid">
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="Coding Atelier Logo">
-        </div>
-        <p class="gallery-text">Coding Atelier Logo</p>
-    </div>
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="CodeKit Tier 1">
-        </div>
-        <p class="gallery-text">CodeKit Tier 1: Unplugged Activities</p>
-    </div>
-
-
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="Refurbished Laptop Setup">
-        </div>
-        <p class="gallery-text">Refurbished Laptop Setup</p>
-    </div>
-
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="Workshop at Rodriguez Elementary">
-        </div>
-        <p class="gallery-text">Workshop at a Community Center</p>
-    </div>
-
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="Custom CodeKit Packaging">
-        </div>
-        <p class="gallery-text">Custom CodeKit Packaging</p>
-    </div>
-
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="Codekit workshops in India">
-        </div>
-        <p class="gallery-text">Codekit workshops in India</p>
-    </div>
-
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="CodeKit Tier 2">
-        </div>
-        <p class="gallery-text">CodeKit Tier 2: USB and Refurbished laptops</p>
-    </div>
-
-    <div class="gallery-item">
-        <div class="gallery-image">
-            <img src="FThecodingatelier.png" alt="Refurbished Laptop">
-        </div>
-        <p class="gallery-text">Refurbished Laptop</p>
-    </div>
+<!-- WELCOME OVERLAY -->
+<div class="welcome-overlay" id="welcomeOverlay">
+    <!-- Stars will be added by JS -->
+    <h2 class="welcome-title">Welcome to Our Gallery</h2>
+    <p class="welcome-subtitle">Helping Students grow and shine with coding Experience - just like stars they are</p>
+    <p class="welcome-hint">Click anywhere to enter</p>
 </div>
 
+<div class="cursor-star" id="cursorStar"></div>
 
 
 
+<main>
+    <h2 class="gallery-title">Gallery</h2>
+    <p class="gallery-subtitle">
+        A glimpse into the workshops, codekits, and joyful moments we’ve shared with our students.
+    </p>
+
+    <section class="gallery-grid" id="galleryGrid">
+        <!-- Replace with your images -->
+        <div class="gallery-item"><img src="images/image1.jpeg"><div class="gallery-caption">Providing mentorship from java experienced tutor, Faaezah</div></div>
+        <div class="gallery-item"><img src="images/image2.jpeg"><div class="gallery-caption">Hands-on learning with creativity.</div></div>
+        <div class="gallery-item"><img src="images/image3.jpeg"><div class="gallery-caption">Exploring first lines of code.</div></div>
+        <div class="gallery-item"><img src="images/image4.jpeg"><div class="gallery-caption">Going through the Codekits</div></div>
+        <div class="gallery-item"><img src="images/image5.jpeg"><div class="gallery-caption">Bringing codekits to the event</div></div>
+        <div class="gallery-item"><img src="images/image6.jpeg"><div class="gallery-caption">Preparing booklets for codeKits</div></div>
+        <div class="gallery-item"><img src="images/image7.jpeg"><div class="gallery-caption">Preparing stickers to create smiles</div></div>
+        <div class="gallery-item"><img src="images/image8.jpeg"><div class="gallery-caption">Codekits production - so many it filled up a room!</div></div>
+
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
-    <div class="footer-icon">
-        <a href="https://www.youtube.com/@TheCodingAtelierbyFaaezah" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-            Follow on YouTube
-        </a>
-    </div>
 </footer>
+
+<script>
+    const overlay = document.getElementById('welcomeOverlay');
+    const cursorStar = document.getElementById('cursorStar');
+    const galleryGrid = document.getElementById('galleryGrid');
+    const bgMusic = document.getElementById('bgMusic');
+
+    /* STAR CURSOR MOVEMENT */
+    document.addEventListener('mousemove', (e) => {
+        cursorStar.style.left = e.clientX + 'px';
+        cursorStar.style.top = e.clientY + 'px';
+    });
+
+    /* ADD FLOATING + TWINKLING STARS */
+    for (let i = 0; i < 40; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.animationDuration = (10 + Math.random() * 10) + 's';
+        star.style.animationDelay = (Math.random() * 5) + 's';
+        overlay.appendChild(star);
+    }
+
+    /* CLICK TO ENTER */
+    overlay.addEventListener('click', () => {
+        overlay.style.transition = 'opacity 1s ease';
+        overlay.style.opacity = '0';
+        setTimeout(() => overlay.style.display = 'none', 1000);
+
+        galleryGrid.classList.add('show');
+
+        cursorStar.style.display = 'none';
+        document.body.style.cursor = 'auto';
+
+        if (bgMusic && bgMusic.src) {
+            bgMusic.volume = 0.4;
+            bgMusic.play().catch(() => {});
+        }
+    });
+</script>
+
 </body>
 </html>
