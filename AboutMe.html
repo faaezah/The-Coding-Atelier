@@ -1,127 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Faaezah - The Coding Atelier</title>
+  <title>Our Story - The Coding Atelier</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <style>
-     {
-   box-sizing: border-box;
- }
+    * {
+      box-sizing: border-box;
+    }
 
- body {
-   margin: 0;
-   font-family: Arial, sans-serif;
-   background-color: #fdeef4;
-   color: #B76E79;
-   font-size: 18px;
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
- }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdeef4;
+      color: #B76E79;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
+    header {
+      background-color: #e75480;
+      padding: 25px;
+      text-align: center;
+    }
 
- header {
-   background-color: #e75480;
-   padding: 25px;
-   text-align: center;
- }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #ffffff;
+    }
 
- header h1 {
-   margin: 0;
-   font-size: 2.5em;
-   color: #ffffff;
- }
+    nav {
+      background-color: #e75480;
+      padding: 10px;
+      text-align: center;
+    }
 
- nav {
-   background-color: #e75480;
-   padding: 10px;
-   text-align: center;
- }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+    }
 
- nav a {
-   color: #ffffff;
-   text-decoration: none;
-   margin: 0 15px;
-   font-size: 1.2em;
- }
+    nav a:hover {
+      color: #ffe6ed;
+    }
 
- nav a:hover {
-   color: #ffe6ed;
- }
+    main {
+      display: flex;
+      flex: 1;
+      padding: 40px;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-main {
-  display: flex;
-  flex: 1;
-  padding: 40px;
-  gap: 40px;
-  align-items: flex-start;
-}
+    .highlight-box {
+      flex: 1 1 450px;
+      background-color: #fff0f5;
+      border: 2px dashed #e75480;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 8px rgba(183, 110, 121, 0.2);
+      font-family: 'Quicksand', Arial, sans-serif;
+      color: #B76E79;
+      text-align: center;
+    }
 
-.box-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px;
-}
+    .highlight-box h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+      color: #e75480;
+    }
 
-.highlight-box {
-  flex: 1 1 calc(50% - 40px);
-  background-color: #fff0f5;
-  border: 2px dashed #e75480;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 8px rgba(183, 110, 121, 0.2);
-  font-family: 'Quicksand', Arial, sans-serif;
-  color: #B76E79;
-  text-align: center;
-}
+    .highlight-box p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
 
+    .image-box {
+      flex: 1 1 450px;
+      max-width: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
 
-.highlight-box h2 {
-  margin-top: 0;
-  font-size: 1.8em;
-  color: #e75480;
-}
+    .image-box img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
 
-.highlight-box p {
-  font-size: 1.2em;
-  line-height: 1.6;
-}
+    footer {
+      background-color: #e75480;
+      text-align: center;
+      color: #ffffff;
+      padding: 15px 0;
+    }
 
- footer {
-   background-color: #e75480;
-   text-align: center;
-   color: #ffffff;
-   padding: 15px 0;
- }
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
- footer a {
-   color: #ffffff;
-   text-decoration: none;
-   font-weight: bold;
- }
+    footer a:hover {
+      color: #ffe6ed;
+    }
 
- footer a:hover {
-   color: #ffe6ed;
- }
-
- .footer-icon img {
-   width: 25px;
-   height: 25px;
-   margin-left: 10px;
-   vertical-align: middle;
- }
+    .footer-icon img {
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
   </style>
-
 </head>
+
+<body>
 
 <header>
   <h1>Our Story</h1>
 </header>
-<body>
+
 <nav>
   <a href="index.html">Home</a>
   <a href="AboutMe.html">About</a>
@@ -134,33 +144,18 @@ main {
   <a href="Contact.html">Contact</a>
 </nav>
 
-<div class="box-grid">
-<div class="highlight-box">
-  <h2>Inspired by Her Grandparents</h2>
-  <p>
-    Faaezah’s summers in India were more than family visits — they were lessons in quiet leadership and compassion. Her grandfather, a retired professor, modeled the power of shared knowledge. Her grandmother, with gentle wisdom, showed how education could be an act of love. These moments shaped Faaezah’s belief that learning should be accessible to all. The Coding Atelier is her tribute to their legacy — a way to extend opportunity to children who’ve been left out of the digital world.
-  </p>
-</div>
-<div class="highlight-box">
-  <h2>Why Digital Literacy Matters</h2>
-  <p>
-    Faaezah has seen firsthand how technology can widen the gap between privilege and possibility. For many children, especially in underserved communities, computers remain out of reach — not because they lack talent, but because they lack access. Through refurbished laptops, custom CodeKits, and hands-on workshops, she’s working to change that. Her goal is simple: make digital literacy feel possible, joyful, and empowering.
-  </p>
-</div>
-<div class="highlight-box">
-  <h2>What makes her CodeKits different</h2>
-  <p>
-    The CodeKits Faaezah designs are more than learning tools — they’re invitations to explore. Built for children with little or no exposure to technology, each kit is layered with offline and online activities, unplugged challenges, and beginner-friendly software. Whether a child is six or sixteen, the kits are crafted to spark curiosity and build confidence before they ever touch a computer.
-  </p>
-</div>
-<div class="highlight-box">
-  <h2>Where she Works</h2>
-  <p>
-    The Coding Atelier lives in two places close to Faaezah’s heart: India, where her family roots run deep, and Austin, Texas, where she’s grown up. From orphanages and universities to local libraries and elementary schools, she’s building partnerships that meet children where they are — with tools that help them grow.
-  </p>
-</div>
-</div>
+<main>
+  <div class="highlight-box">
+    <h2>About The Coding Atelier</h2>
+    <p>
+      Faaezah is the founder of The Coding Atelier. While handing out food packages with her grandmother, she met a girl who dreamed of becoming a computer scientist. The girl believed her dream was impossible due to her family's financial situation. Thus, the Coding Atelier was born. The Coding Atelier—especially through our coding kits—shatters the myth that learning computer science requires a computer. We nurture children from underprivileged communities, giving them opportunities to grow and shine brighter.
+    </p>
+  </div>
 
+  <div class="image-box">
+    <img src="FThecodingatelier.png" alt="CodeKit Preview">
+  </div>
+</main>
 
 <footer>
   <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
@@ -171,5 +166,6 @@ main {
     </a>
   </div>
 </footer>
+
 </body>
 </html>
