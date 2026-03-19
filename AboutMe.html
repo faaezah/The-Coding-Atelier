@@ -6,6 +6,8 @@
   <title>Our Story - The Coding Atelier</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -13,114 +15,142 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fdeef4;
-      color: #B76E79;
+      font-family: 'Inter', sans-serif;
+      background-color: #FDF2F6; /* soft modern pink */
+      color: #3A2A2E; /* deep rose-brown text */
       font-size: 18px;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
+    /* HEADER */
     header {
-      background-color: #e75480;
-      padding: 25px;
+      background: linear-gradient(135deg, #E47A9F, #C95A82);
+      padding: 45px 20px;
       text-align: center;
+      color: white;
+      border-bottom: 1px solid #F7DCE6;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
-      color: #ffffff;
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
 
+    /* NAVIGATION */
     nav {
-      background-color: #e75480;
-      padding: 10px;
-      text-align: center;
+      background-color: #ffffff;
+      padding: 15px 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      border-bottom: 1px solid #F3C9D8;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
-      color: #ffffff;
+      color: #B03E6F;
       text-decoration: none;
-      margin: 0 15px;
-      font-size: 1.2em;
+      font-weight: 500;
+      padding: 6px 4px;
+      border-bottom: 2px solid transparent;
+      transition: 0.25s ease;
     }
 
     nav a:hover {
-      color: #ffe6ed;
+      border-bottom: 2px solid #E46C96;
+      color: #8A2F57;
     }
 
+    /* MAIN LAYOUT */
     main {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      padding: 60px 8%;
       flex: 1;
-      padding: 40px;
-      gap: 40px;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
     }
 
     .highlight-box {
-      flex: 1 1 450px;
-      background-color: #fff0f5;
-      border: 2px dashed #e75480;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 4px 8px rgba(183, 110, 121, 0.2);
-      font-family: 'Quicksand', Arial, sans-serif;
-      color: #B76E79;
-      text-align: center;
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      padding: 30px;
+      border: 2px solid #F3C9D8;
+      box-shadow: 0px 6px 20px rgba(230, 120, 160, 0.18);
+      color: #4A3A3F;
     }
 
     .highlight-box h2 {
       margin-top: 0;
-      font-size: 1.8em;
-      color: #e75480;
+      font-size: 2rem;
+      color: #8A2F57;
+      font-weight: 600;
     }
 
     .highlight-box p {
-      font-size: 1.2em;
-      line-height: 1.6;
+      font-size: 1.15rem;
+      line-height: 1.7;
     }
 
+    /* IMAGE BOX */
     .image-box {
-      flex: 1 1 450px;
-      max-width: 600px;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: transform 0.3s ease;
-      cursor: pointer;
     }
 
     .image-box img {
       width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
+      max-width: 550px;
+      border-radius: 14px;
+      border: 2px solid #F3C9D8;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
+    .image-box img:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 10px 28px rgba(230, 120, 160, 0.25);
+    }
+
+    /* FOOTER */
     footer {
-      background-color: #e75480;
+      background-color: #ffffff;
       text-align: center;
-      color: #ffffff;
-      padding: 15px 0;
+      color: #8A2F57;
+      padding: 20px 0;
+      border-top: 1px solid #F3C9D8;
+      font-size: 0.95rem;
     }
 
     footer a {
-      color: #ffffff;
+      color: #B03E6F;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     footer a:hover {
-      color: #ffe6ed;
+      text-decoration: underline;
     }
 
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      .image-box {
+        order: -1;
+      }
+    }
     .footer-icon img {
-      width: 25px;
-      height: 25px;
-      margin-left: 10px;
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
       vertical-align: middle;
     }
   </style>
@@ -156,6 +186,7 @@
     <img src="FThecodingatelier.png" alt="CodeKit Preview">
   </div>
 </main>
+
 
 <footer>
   <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>

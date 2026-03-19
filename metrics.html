@@ -6,160 +6,185 @@
     <title>Impact Metrics - The Coding Atelier</title>
 
     <style>
-        * { box-sizing: border-box; }
-
-        body {
-          margin: 0;
-          font-family: Arial, sans-serif;
-          background-color: #fdeef4;
-          color: #B76E79;
-          font-size: 18px;
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
+        * {
+            box-sizing: border-box;
         }
 
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF2F6; /* soft modern pink */
+            color: #3A2A2E;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* HEADER — gradient theme */
         header {
-          background-color: #e75480;
-          padding: 25px;
-          text-align: center;
+            background: linear-gradient(135deg, #E47A9F, #C95A82);
+            padding: 45px 20px;
+            text-align: center;
+            color: white;
+            border-bottom: 1px solid #F7DCE6;
         }
 
         header h1 {
-          margin: 0;
-          font-size: 2.5em;
-          color: #ffffff;
+            margin: 0;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
+        /* NAV — white bar theme */
         nav {
-          background-color: #e75480;
-          padding: 10px;
-          text-align: center;
+            background-color: #ffffff;
+            padding: 15px 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            border-bottom: 1px solid #F3C9D8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
-          color: #ffffff;
-          text-decoration: none;
-          margin: 0 15px;
-          font-size: 1.2em;
+            color: #B03E6F;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.25s ease;
         }
 
         nav a:hover {
-          color: #ffe6ed;
+            border-bottom: 2px solid #E46C96;
+            color: #8A2F57;
         }
 
+        /* MAIN */
         main {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 40px 20px 60px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 60px 20px;
         }
 
-        /* TITLE */
+        /* TITLES */
         .impact-title {
-          font-size: 2.4em;
-          color: #e75480;
-          margin-bottom: 10px;
-          text-align: center;
+            font-size: 2.4rem;
+            color: #8A2F57;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 600;
         }
 
         .impact-subtitle {
-          max-width: 700px;
-          text-align: center;
-          font-size: 1.1em;
-          color: #B76E79;
-          margin-bottom: 40px;
+            max-width: 700px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #4A3A3F;
+            margin-bottom: 40px;
         }
 
         /* METRICS */
         .impact-metrics {
-          display: flex;
-          justify-content: center;
-          gap: 25px;
-          margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .metric {
-          background-color: #fff0f5;
-          border: 2px dashed #e75480;
-          color: #e75480;
-          width: 160px;
-          height: 160px;
-          border-radius: 20px;
-          font-size: 2rem;
-          font-weight: bold;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 4px 12px rgba(183,110,121,0.25);
+            background-color: #ffffff;
+            border: 2px solid #F3C9D8;
+            color: #8A2F57;
+            width: 160px;
+            height: 160px;
+            border-radius: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(230,120,160,0.18);
         }
 
         .metric span {
-          font-size: 0.9rem;
-          font-weight: normal;
-          color: #B76E79;
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: #B76E79;
         }
 
         /* CHART */
         .chart-container {
             width: 90%;
             max-width: 600px;
-            background: #fff0f5;
-            border: 2px dashed #e75480;
+            background: #ffffff;
+            border: 2px solid #F3C9D8;
             border-radius: 20px;
             padding: 25px;
             margin-top: 30px;
-            box-shadow: 0 4px 12px rgba(183,110,121,0.25);
+            box-shadow: 0 4px 14px rgba(230,120,160,0.18);
         }
 
         .chart-title {
             text-align: center;
-            color: #e75480;
+            color: #8A2F57;
             margin-bottom: 15px;
             font-size: 1.4rem;
+            font-weight: 600;
         }
+
+        /* IMPACT NOTE */
         .impact-note {
-    max-width: 700px;
-    text-align: center;
-    margin-top: 25px;
-    font-size: 1.3rem; /* bigger text */
-    color: #e75480; /* stronger pink */
-    font-weight: 600; /* bold but elegant */
-    line-height: 1.7;
-    background: #fff0f5;
-    padding: 18px 22px;
-    border-radius: 18px;
-    border: 2px dashed #e75480;
-    box-shadow: 0 4px 12px rgba(183,110,121,0.25);
-}
+            max-width: 700px;
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.3rem;
+            color: #8A2F57;
+            font-weight: 600;
+            line-height: 1.7;
+            background: #ffffff;
+            padding: 18px 22px;
+            border-radius: 18px;
+            border: 2px solid #F3C9D8;
+            box-shadow: 0 4px 14px rgba(230,120,160,0.18);
+        }
 
-
+        /* FOOTER — white bar theme */
         footer {
-          background-color: #e75480;
-          text-align: center;
-          color: #ffffff;
-          padding: 15px 0;
+            background-color: #ffffff;
+            text-align: center;
+            color: #8A2F57;
+            padding: 20px 0;
+            border-top: 1px solid #F3C9D8;
+            font-size: 0.95rem;
         }
 
         footer a {
-          color: #ffffff;
-          text-decoration: none;
-          font-weight: bold;
+            color: #B03E6F;
+            text-decoration: none;
+            font-weight: 600;
         }
 
         footer a:hover {
-          color: #ffe6ed;
+            text-decoration: underline;
         }
-
-        @media (max-width: 600px) {
-          .impact-metrics {
-            flex-direction: column;
-            align-items: center;
-          }
-        }
+         .footer-icon img {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
     </style>
+
 </head>
 
 <body>
@@ -206,6 +231,12 @@
 
 <footer>
     <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
+    <div class="footer-icon">
+        <a href="https://www.youtube.com/@TheCodingAtelierbyFaaezah" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+            Follow on YouTube
+        </a>
+    </div>
 </footer>
 
 <!-- CHART.JS -->

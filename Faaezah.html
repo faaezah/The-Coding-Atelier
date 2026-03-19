@@ -1,171 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Faaezah - The Coding Atelier</title>
+    <title>Founder – The Coding Atelier</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-         {
- box-sizing: border-box;
-}
+        * { box-sizing: border-box; }
 
-body {
- margin: 0;
- font-family: Arial, sans-serif;
- background-color: #fdeef4;
- color: #B76E79;
- font-size: 20px;
- display: flex;
- flex-direction: column;
- min-height: 100vh;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF2F6;
+            color: #3A2A2E;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #E47A9F, #C95A82);
+            padding: 45px 20px;
+            text-align: center;
+            color: white;
+            border-bottom: 1px solid #F7DCE6;
+        }
 
-header {
- background-color: #e75480;
- padding: 30px;
- text-align: center;
-}
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            font-weight: 700;
+        }
 
-header h1 {
- margin: 0;
- font-size: 2.5em;
- color: #ffffff;
-}
+        /* NAVIGATION */
+        nav {
+            background-color: #ffffff;
+            padding: 15px 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            border-bottom: 1px solid #F3C9D8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-nav {
- background-color: #e75480;
- padding: 10px;
- text-align: center;
-}
+        nav a {
+            color: #B03E6F;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.25s ease;
+        }
 
-nav a {
- color: #ffffff;
- text-decoration: none;
- margin: 0 15px;
- font-size: 1.2em;
-}
+        nav a:hover {
+            border-bottom: 2px solid #E46C96;
+            color: #8A2F57;
+        }
 
-nav a:hover {
- color: #ffe6ed;
-}
+        /* MAIN CONTENT */
+        .founder-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
 
-main {
-display: flex;
-flex: 1;
-padding: 40px;
-gap: 40px;
-align-items: flex-start;
-}
+        .founder-photo {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #F3C9D8;
+            box-shadow: 0px 6px 20px rgba(230, 120, 160, 0.18);
+            margin-bottom: 25px;
+        }
 
-.text-area {
-flex: 1;
-padding-right: 20px;
-}
+        .name-tag {
+            display: inline-block;
+            padding: 10px 22px;
+            background-color: #ffffff;
+            border: 2px solid #F3C9D8;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #B03E6F;
+            margin-bottom: 25px;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
 
-.image-box {
-flex: 1;
-max-width: 600px;
-transition: transform 0.3s ease;
-cursor: pointer;
-display: flex;
-justify-content: center;
-align-items: center;
-}
+        .name-tag:hover {
+            transform: scale(1.05);
+            background-color: #FCE7EF;
+        }
 
-.image-box img {
-width: 100%;
-height: auto;
-border: 2px solid #e75480;
-border-radius: 10px;
-transition: transform 0.3s ease;
-}
+        .bio-card {
+            background-color: #ffffff;
+            border: 2px solid #F3C9D8;
+            border-radius: 14px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0px 6px 20px rgba(230, 120, 160, 0.18);
+            line-height: 1.7;
+            color: #4A3A3F;
+        }
 
-.image-box:hover img {
-transform: scale(1.08);
-}
+        .bio-card h2 {
+            margin-top: 0;
+            color: #8A2F57;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
 
-footer {
- background-color: #e75480;
- text-align: center;
- color: #ffffff;
- padding: 15px 0;
-}
+        /* AMBASSADOR PLACEHOLDER */
+        .ambassador-section {
+            margin: 70px auto;
+            max-width: 900px;
+            padding: 0 20px;
+            text-align: center;
+        }
 
-footer a {
- color: #ffffff;
- text-decoration: none;
- font-weight: bold;
-}
+        .ambassador-section h2 {
+            color: #8A2F57;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
 
-footer a:hover {
- color: #ffe6ed;
-}
+        .ambassador-placeholder {
+            background-color: #ffffff;
+            border: 2px dashed #F3C9D8;
+            border-radius: 14px;
+            padding: 40px;
+            color: #B03E6F;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
 
-.footer-icon img {
- width: 25px;
- height: 25px;
- margin-left: 10px;
- vertical-align: middle;
-}
+        /* FOOTER */
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            color: #8A2F57;
+            padding: 20px 0;
+            border-top: 1px solid #F3C9D8;
+            font-size: 0.95rem;
+        }
 
+        footer a {
+            color: #B03E6F;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-      .image-box {
-        max-width: 300px;
-        margin: 20px auto;
-        text-align: center;
-      }
-
-    .image-box img {
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
-  object-position: center;
-  transform: scale(0.95);
-  border-radius: 50%;
-  border: 4px solid #e75480;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-
-
-
-      .box {
-        background-color: #ffedf4;
-        border: 2px solid #e75480;
-        border-radius: 10px;
-        padding: 15px 20px;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        margin: 20px auto;
-        max-width: 750px;
-        line-height: 1.5;
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-
-      .box:hover {
-        transform: scale(1.02);
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .box h2 {
-        color: #c4005a;
-        font-size: 1.4em;
-        margin-bottom: 10px;
-      }
-
-      .box p {
-        color: #4d004d;
-        font-size: 1.2em;
-      }
-
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-icon img {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
     </style>
 </head>
+
 <body>
+
 <header>
-    <h1>About Faaezah</h1>
+    <h1>Meet The Team</h1>
 </header>
 
 <nav>
@@ -180,19 +188,32 @@ footer a:hover {
     <a href="Contact.html">Contact</a>
 </nav>
 
+<div class="founder-section">
 
+    <img src="Screenshot%202025-08-11%20113434.png" class="founder-photo" alt="Faaezah">
 
-<div class="image-box">
-    <img src="Screenshot%202025-08-11%20113434.png" alt="A photo of Faaezah">
+    <div class="name-tag" onclick="window.location.href='Faaezah.html'">
+        Faaezah — Founder
+    </div>
+
+    <div class="bio-card">
+        <h2>About Faaezah</h2>
+        <p>
+            Faaezah is a 14-year-old sophomore based in Texas whose passion for computer science and robotics runs deep. After moving from London to the U.S. in 8th grade, she found herself navigating a new world — and turned to coding as a way to connect with something meaningful. What began as self-taught experiments in Java and Python quickly evolved into a love for logic, creativity, and building things that matter.
+        </p>
+        <p>
+            She uses her computer science skills to help robotics team #7797 Victorian Voltage (as a software lead), conduct cybersecurity research, and participate actively in her school's machine learning club by building a disability-supporting AI chatbot. She knows this is just the beginning and looks forward to seeing how her career will shape over the coming years.
+        </p>
+    </div>
 </div>
 
-<div class="box">
-    <h2>About Faaezah</h2>
-    <p>
-        Faaezah is a 14-year-old sophomore based in Texas whose passion for computer science and robotics runs deep. After moving from London to the U.S. in 8th grade, she found herself navigating a new world — and turned to coding as a way to connect with something meaningful. What began as self-taught experiments in Java and Python quickly evolved into a love for logic, creativity, and building things that matter.
-        She uses her computer science skills to help robotics team #7797 Victorian Voltage (as a software lead), conduct cybersecurity research, and participate actively in her school's machine learning club by building a disability supporting ai chatbot. She knows this is just the beginning and looks forward to seeing how her career will shape over the coming years.
-    </p>
+<div class="ambassador-section">
+    <h2>Global Ambassadors</h2>
+    <div class="ambassador-placeholder">
+        Ambassador profiles coming soon.
+    </div>
 </div>
+
 
 <footer>
     <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
@@ -203,5 +224,6 @@ footer a:hover {
         </a>
     </div>
 </footer>
+
 </body>
 </html>
