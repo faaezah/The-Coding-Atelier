@@ -8,135 +8,55 @@
     <style>
         * { box-sizing: border-box; }
 
-       * {
-      box-sizing: border-box;
-    }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF2F6;
+            color: #3A2A2E;
+            font-size: 18px;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #FDF2F6; /* soft modern pink */
-      color: #3A2A2E; /* deep rose-brown text */
-      font-size: 18px;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #E47A9F, #C95A82);
+            padding: 45px 20px;
+            text-align: center;
+            color: white;
+        }
 
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, #E47A9F, #C95A82);
-      padding: 45px 20px;
-      text-align: center;
-      color: white;
-      border-bottom: 1px solid #F7DCE6;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            font-weight: 700;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.6rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
+        /* NAVIGATION */
+        nav {
+            background-color: #ffffff;
+            padding: 15px 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            border-bottom: 1px solid #F3C9D8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-    /* NAVIGATION */
-    nav {
-      background-color: #ffffff;
-      padding: 15px 25px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: center;
-      border-bottom: 1px solid #F3C9D8;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+        nav a {
+            color: #B03E6F;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.25s ease;
+        }
 
-    nav a {
-      color: #B03E6F;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 6px 4px;
-      border-bottom: 2px solid transparent;
-      transition: 0.25s ease;
-    }
-
-    nav a:hover {
-      border-bottom: 2px solid #E46C96;
-      color: #8A2F57;
-    }
-
-    /* MAIN LAYOUT */
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      padding: 60px 8%;
-      flex: 1;
-    }
-
-    .text-area h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #8A2F57;
-      font-weight: 600;
-    }
-
-    .text-area p {
-      line-height: 1.7;
-      margin-bottom: 30px;
-      color: #4A3A3F;
-    }
-
-    /* IMAGE BOX */
-    .image-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-box img {
-      width: 100%;
-      max-width: 550px;
-      border-radius: 14px;
-      border: 2px solid #F3C9D8;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .image-box img:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 10px 28px rgba(230, 120, 160, 0.25);
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: #ffffff;
-      text-align: center;
-      color: #8A2F57;
-      padding: 20px 0;
-      border-top: 1px solid #F3C9D8;
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: #B03E6F;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-icon img {
-      width: 24px;
-      height: 24px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-
-
+        nav a:hover {
+            border-bottom: 2px solid #E46C96;
+            color: #8A2F57;
+        }
 
         /* WELCOME OVERLAY */
         .welcome-overlay {
@@ -183,7 +103,7 @@
             z-index: 1000;
         }
 
-        /* FLOATING + TWINKLING STARS */
+        /* FLOATING STARS */
         .star {
             position: absolute;
             width: 8px;
@@ -202,89 +122,153 @@
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; }
             50% { opacity: 1; }
-        }/* Clean centered gallery box */
-.gallery-wrapper {
-    background: #ffffff;
-    border: 2px solid #F3C9D8;
-    border-radius: 16px;
-    padding: 40px;
-    max-width: 1100px;
-    margin: 50px auto;
-    box-shadow: 0px 10px 28px rgba(230, 120, 160, 0.15);
-}
+        }
 
-/* Center the gallery section */
-main {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
+        /* MAIN LAYOUT: GALLERY LEFT + INFO RIGHT */
+        .gallery-layout {
+            max-width: 1300px;
+            margin: 60px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
 
-/* Center the title + subtitle */
-.gallery-title,
-.gallery-subtitle {
-    text-align: center;
-}
+        /* LEFT SIDE — SCRAPBOOK GALLERY */
+        .gallery-grid {
+            column-count: 2;
+            column-gap: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
 
-/* Clean centered grid (no white box) */
-.gallery-grid {
-   .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    justify-items: center;   /* centers each card */
-    align-items: start;      /* keeps rows perfectly aligned */
-    margin-top: 30px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-}
+        .gallery-grid.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 30px;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #F3C9D8;
+            box-shadow: 0 6px 18px rgba(230,120,160,0.18);
+            transition: transform 0.3s ease;
+        }
 
-.gallery-grid.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .gallery-item:hover {
+            transform: translateY(-6px);
+        }
 
-/* Image cards (same design as before) */
-.gallery-item {
-    width: 100%;
-    max-width: 300px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    background: #fff;
-    border: 2px solid #F3C9D8;
-    box-shadow: 0 4px 14px rgba(230,120,160,0.18);
-}
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
 
-/* Images */
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
+        .gallery-caption {
+            padding: 14px;
+            background: #FDECF4;
+            color: #8A2F57;
+            font-size: 0.95rem;
+        }
 
-.gallery-item:hover img {
-    transform: scale(1.06);
-    filter: brightness(1.08);
-}
+        /* RIGHT SIDE — INFO BOX */
+        .info-box {
+            background: #FDECF4;
+            border: 3px solid #F3C9D8;
+            border-radius: 22px;
+            padding: 25px;
+            box-shadow: 0 8px 22px rgba(230,120,160,0.15);
+            position: sticky;
+            top: 120px;
+        }
 
-/* Caption overlay */
-.gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 16px;
-    background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);
-    color: #fff;
-    font-size: 0.9rem;
-}
+        .info-box h3 {
+            margin-top: 0;
+            color: #8A2F57;
+            font-size: 1.7rem;
+            text-align: center;
+        }
 
+        .info-box p {
+            color: #4A3A3F;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .info-box .email {
+            font-weight: bold;
+            color: #B03E6F;
+        }
+
+        .cute-email-box {
+            background: #E47A9F;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            text-align: center;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(230,120,160,0.25);
+        }
+
+        .tiny-note {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .gallery-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                column-count: 1;
+            }
+
+            .info-box {
+                position: relative;
+                top: 0;
+                margin-top: 20px;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            color: #8A2F57;
+            padding: 20px 0;
+            border-top: 1px solid #F3C9D8;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #B03E6F;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-icon img {
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -294,7 +278,7 @@ main {
 <nav>
     <a href="index.html">Home</a>
     <a href="AboutMe.html">About</a>
-    <a href="Faaezah.html">Founder</a>
+    <a href="Faaezah.html">Meet The Team</a>
     <a href="gallery.html">Gallery</a>
     <a href="donate.html">Donate</a>
     <a href="pin.html">Online Codekit</a>
@@ -305,23 +289,19 @@ main {
 
 <!-- WELCOME OVERLAY -->
 <div class="welcome-overlay" id="welcomeOverlay">
-    <!-- Stars will be added by JS -->
     <h2 class="welcome-title">Welcome to Our Gallery</h2>
-    <p class="welcome-subtitle">Helping Students grow and shine with coding Experience - just like stars they are</p>
+    <p class="welcome-subtitle">Helping students shine like the stars they are ✨</p>
     <p class="welcome-hint">Click anywhere to enter</p>
 </div>
 
 <div class="cursor-star" id="cursorStar"></div>
 
+<!-- MAIN CONTENT -->
+<div class="gallery-layout">
 
-
-<main>
-    <h2 class="gallery-title">Gallery</h2>
-    <p class="gallery-subtitle">
-        A glimpse into the workshops, codekits, and joyful moments we’ve shared with our students.
-    </p>
-
+    <!-- LEFT SIDE: GALLERY -->
     <section class="gallery-grid" id="galleryGrid">
+
         <div class="gallery-item"><img src="image1.jpeg"><div class="gallery-caption">Providing mentorship from java experienced tutor, Faaezah</div></div>
         <div class="gallery-item"><img src="image2.jpeg"><div class="gallery-caption">Hands-on learning with creativity.</div></div>
         <div class="gallery-item"><img src="image3.jpeg"><div class="gallery-caption">Exploring first lines of code.</div></div>
@@ -329,35 +309,126 @@ main {
         <div class="gallery-item"><img src="image5.jpeg"><div class="gallery-caption">Bringing codekits to the event</div></div>
         <div class="gallery-item"><img src="image6.jpeg"><div class="gallery-caption">Preparing booklets for codeKits</div></div>
         <div class="gallery-item"><img src="image7.jpeg"><div class="gallery-caption">Preparing stickers to create smiles</div></div>
-        <div class="gallery-item"><img src="image8.jpeg"><div class="gallery-caption">Codekits production - so many it filled up a room!</div></div>
+        <div class="gallery-item"><img src="image8.jpeg"><div class="gallery-caption">Codekits production </div></div>
+
     </section>
-</main>
 
+    <!-- RIGHT SIDE: INFO BOX -->
+    <aside class="info-box">
+        <h3>Share Your Photos ✨</h3>
 
+        <p>Want your pictures featured in our gallery?</p>
+
+        <p class="email">thecodingatelierbyfaaezah@gmail.com</p>
+
+        <div class="cute-email-box">
+            📸 <span>Help us grow our community gallery!</span>
+        </div>
+
+        <p class="tiny-note">*By sending photos, you give permission for us to feature them.</p>
+    </aside>
+
+</div>
+
+<style>
+    footer {
+      background: #ffffff;
+      padding: 40px 0;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #333;
+    }
+
+    .footer-brand {
+      font-size: 16px;
+      font-weight: 600;
+      color: #d94f9f; /* soft pink */
+      margin-bottom: 10px;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: #555;
+      margin-top: 12px;
+    }
+
+    .footer-icons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .footer-icons a {
+      width: 40px;
+      height: 40px;
+      background: #ffe6f2; /* pastel pink */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: all .2s ease;
+      color: #d94f9f;
+    }
+
+    .footer-icons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+    }
+
+    .footer-icons svg {
+      width: 22px;
+      height: 22px;
+    }
+</style>
 
 <footer>
-    <p>&copy; 2025 The Coding Atelier by Faaezah. All rights reserved.</p>
-    <div class="footer-icon">
-        <a href="https://www.youtube.com/@TheCodingAtelierbyFaaezah" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-            Follow on YouTube
+    <div class="footer-brand">
+        © 2026 The Coding Atelier
+    </div>
+
+    <div class="footer-icons">
+
+        <!-- Instagram Icon -->
+        <a href="https://www.instagram.com/thecodingatelierbyfaaezah/" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+            </svg>
         </a>
+
+        <!-- YouTube Icon -->
+        <a href="https://www.youtube.com/@theCodingAtelierByFaaezah" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.8 8.001s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.2 5 12 5 12 5h-.1s-4.2 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S1 9.6 1 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.9 2.8.1 7 .1 7 .1s4.2 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM10 14.5V9.5l5 2.5-5 2.5z"/>
+            </svg>
+        </a>
+
+        <!-- Linktree Icon -->
+        <a href="https://linktr.ee/TheCodingAtelierByFaaezah" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l4 7h-8l4-7zm0 20l-4-12h8l-4 12zm8-13l-3 2 3 2c.6.4.8 1.2.4 1.8-.4.6-1.2.8-1.8.4l-4-2.5 4-2.5c.6-.4.8-1.2.4-1.8-.4-.6-1.2-.8-1.8-.4zm-16 0c-.6-.4-1.4-.2-1.8.4-.4.6-.2 1.4.4 1.8l3 2-3 2c-.6.4-.8 1.2-.4 1.8.4.6 1.2.8 1.8.4l4-2.5-4-2.5z"/>
+            </svg>
+        </a>
+
+    </div>
+
+    <div class="footer-tagline">
+        Building accessible tech education, one CodeKit at a time.
     </div>
 </footer>
+
 
 <script>
     const overlay = document.getElementById('welcomeOverlay');
     const cursorStar = document.getElementById('cursorStar');
     const galleryGrid = document.getElementById('galleryGrid');
-    const bgMusic = document.getElementById('bgMusic');
 
-    /* STAR CURSOR MOVEMENT */
     document.addEventListener('mousemove', (e) => {
         cursorStar.style.left = e.clientX + 'px';
         cursorStar.style.top = e.clientY + 'px';
     });
 
-    /* ADD FLOATING + TWINKLING STARS */
     for (let i = 0; i < 40; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -368,7 +439,6 @@ main {
         overlay.appendChild(star);
     }
 
-    /* CLICK TO ENTER */
     overlay.addEventListener('click', () => {
         overlay.style.transition = 'opacity 1s ease';
         overlay.style.opacity = '0';
@@ -378,11 +448,6 @@ main {
 
         cursorStar.style.display = 'none';
         document.body.style.cursor = 'auto';
-
-        if (bgMusic && bgMusic.src) {
-            bgMusic.volume = 0.4;
-            bgMusic.play().catch(() => {});
-        }
     });
 </script>
 
